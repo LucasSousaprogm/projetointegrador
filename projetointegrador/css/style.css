@@ -1,0 +1,777 @@
+/*
+    style_login.css
+    Estilos para a tela de Login e Cadastro (para consistência)
+*/
+
+/* Reset e Configurações Básicas */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9; /* Fundo cinza claro */
+    color: #333;
+}
+
+/* Container Principal do Formulário */
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Largura máxima para a tela de login */
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #0056b3; /* Cor azul para o título */
+    font-size: 1.8em;
+}
+
+/* Grupos de Formulário */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Botão de Login/Cadastro */
+.btn-login {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Mensagem de Erro */
+.mensagem-erro {
+    background-color: #fdd; /* Vermelho claro */
+    color: #cc0000; /* Vermelho escuro */
+    border: 1px solid #fbc;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Mensagem de Sucesso (após cadastro) */
+.mensagem-sucesso {
+    background-color: #dff0d8; 
+    color: #3c763d; 
+    border: 1px solid #d6e9c6; 
+    padding: 10px; 
+    border-radius: 4px; 
+    margin-bottom: 20px; 
+    font-size: 0.9em;
+}
+
+/* Link de Cadastro */
+.cadastro-link {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.cadastro-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cadastro-link a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================================= */
+/* ESTILOS ESPECÍFICOS: INDEX.PHP (Lista de Salas) */
+/* ========================================================= */
+
+.lista-salas {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sala-item {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    background-color: #e0f2f7; 
+    color: #1a535c;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    border: 1px solid #b3e0e9;
+}
+
+.sala-item:hover {
+    background-color: #b3e0e9; 
+}
+
+/* ========================================================= */
+/* ESTILOS DE FILTRO E BOTÕES GERAIS */
+/* ========================================================= */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.filtros > div {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    flex-grow: 1;
+}
+
+.filtros label {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.filtros input[type="text"],
+.filtros input[type="number"],
+.filtros select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.btn-filtrar {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Verde de Ação Principal */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+    flex-grow: 0;
+}
+
+.btn-filtrar:hover {
+    background-color: #45a049;
+}
+
+.btn-limpar {
+    padding: 10px 15px;
+    background-color: #f44336; /* Vermelho para limpar */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-limpar:hover {
+    background-color: #d32f2f;
+}
+
+.btn-voltar-index {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar-index:hover {
+    background-color: #0056b3;
+}
+
+.btn-novo-patrimonio {
+    background-color: #17a2b8; /* Azul claro/Ciano */
+    padding: 8px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-novo-patrimonio:hover {
+    background-color: #138496;
+}
+
+/* ========================================================= */
+/* ESTILOS DE TABELA (LISTA DE PATRIMÔNIO) */
+/* ========================================================= */
+
+.principal-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.principal-tabela thead th {
+    background-color: #1a535c; 
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.principal-tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.principal-tabela tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+.principal-tabela td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Coluna de Ações */
+.coluna-acoes {
+    display: flex;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.btn-editar, .btn-mover, .btn-deletar {
+    padding: 6px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.btn-editar {
+    background-color: #ffc107; /* Amarelo */
+}
+
+.btn-editar:hover {
+    background-color: #e0a800;
+}
+
+.btn-mover {
+    background-color: #17a2b8; 
+}
+
+.btn-mover:hover {
+    background-color: #138496;
+}
+
+.btn-deletar {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.btn-deletar:hover {
+    background-color: #c82333;
+}
+
+
+/* ========================================================= */
+/* ESTILOS DE ALERTA E MENSAGEM */
+/* ========================================================= */
+.alerta-patrimonio-movido {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    position: relative;
+    font-weight: normal;
+}
+
+.alerta-patrimonio-movido .fechar {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* ========================================================= */
+/* ESTILOS DE FORMULÁRIO (Cria/Edita/Move) */
+/* ========================================================= */
+
+.form-crud, .container-mover {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-crud label, .container-mover label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-crud input[type="text"],
+.form-crud input[type="number"],
+.form-crud select,
+.container-mover select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/* --- Estilos para view_confirma_baixa_patrimonio.php --- */
+
+/* Ajustes no layout principal */
+.principal {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-action-links {
+    text-align: right; 
+    margin-bottom: 20px; 
+    font-size: 0.9em;
+}
+
+.titulo-alerta {
+    text-align: center;
+    color: #d9534f; /* Cor vermelha de alerta */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Estilo de alerta/aviso para a caixa de confirmação */
+.alerta-aviso {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #faebcc; /* Borda clara amarelada */
+    border-radius: 4px;
+    text-align: center;
+    line-height: 1.6;
+    background-color: #fcf8e3; /* Amarelo muito claro */
+    color: #8a6d3b;           /* Texto escuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.alerta-aviso p {
+    margin: 5px 0;
+}
+
+.alerta-aviso hr {
+    margin: 10px auto;
+    width: 80%;
+    border-top: 1px solid #faebcc;
+}
+
+.alerta-aviso .mensagem-irreversivel {
+    margin-top: 15px; 
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Container dos botões */
+.action-buttons-container {
+    margin-top: 30px; 
+    display: flex; 
+    justify-content: space-between;
+}
+
+/* Botão de Excluir/Baixa (Ação Destrutiva) */
+.btn-deletar {
+    width: 48%; /* Divide o espaço com o botão Cancelar */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    background-color: #d9534f; /* Vermelho padrão */
+    color: #fff;
+    border: 1px solid #d43f3a;
+}
+
+.btn-deletar:hover {
+    background-color: #c9302c; /* Vermelho mais escuro no hover */
+}
+
+/* Botão de Cancelar (Ação Segura) - Usando a classe btn-filtrar */
+.btn-filtrar {
+    width: 48%; /* Divide o espaço */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    background-color: #5cb85c; /* Verde padrão */
+    color: #fff;
+    border: 1px solid #4cae4c;
+}
+
+.btn-filtrar:hover {
+    background-color: #449d44;
+}
+
+/* Estilo para o botão de voltar à Index */
+.btn-voltar-index {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar-index:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+body {
+    /* O body principal deve ser flex:none para que os containers de CRUD funcionem bem */
+    display: block; 
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar {
+    background-color: #0056b3;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-logout {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.main-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    color: #0056b3;
+    margin: 0; /* Adicionado para consistência */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-save {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold; /* Adicionado para consistência */
+}
+
+.btn-save:hover {
+    background-color: #218838;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-action {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    margin-left: 5px;
+    color: white;
+    display: inline-block; /* Adicionado para consistência */
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800; /* Adicionado hover */
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white; /* Corrigido: o seu código anterior tinha cor branca, o mais recente não */
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Adicionado hover */
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1; /* Adicionado para centralizar o 'X' */
+}
+/* ========================================================= */
+/* MEDIA QUERIES (Responsividade) */
+/* ========================================================= */
+
+@media screen and (max-width: 768px) {
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros > div {
+        min-width: 100%;
+    }
+
+    .principal {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    /* Tabela no modo Cartão */
+    .principal-tabela {
+        border: 1px solid #ccc;
+        display: block;
+    }
+
+    .principal-tabela thead {
+        display: none;
+    }
+
+    .principal-tabela tr {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        display: block;
+    }
+    
+    .principal-tabela td {
+        border: none;
+        padding: 8px 0;
+        text-align: left;
+        position: relative;
+        padding-left: 50%;
+        border-bottom: 1px dotted #eee;
+        min-height: 25px; 
+        display: block;
+    }
+    
+    .principal-tabela tr:last-child {
+        border-bottom: none; 
+    }
+
+    /* Criação do Label para o modo Cartão */
+    .principal-tabela td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%; 
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* Ajuste da Coluna de Ações */
+    .principal-tabela .coluna-acoes {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column; 
+        gap: 5px;
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+}
